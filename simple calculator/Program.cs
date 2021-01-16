@@ -10,15 +10,26 @@ namespace simple_calculator
     {
         static void Main(string[] args)
         {
-            InputConverter inputConverter = new InputConverter();
-            CalculatorEngine calculatorEngine = new CalculatorEngine();
+            try
+            {
+                InputConverter inputConverter = new InputConverter();
+                CalculatorEngine calculatorEngine = new CalculatorEngine();
 
-            double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-            double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-            string operation = Console.ReadLine();
+                double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                string operation = Console.ReadLine();
 
-            double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
-            Console.WriteLine(result);
+                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+                Console.WriteLine(result);
+                Console.ReadKey();
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                Console.ReadKey();
+            }
         }
     }
 }
