@@ -8,7 +8,7 @@ namespace simple_calculator
 {
     class Program
     {
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
             InputConverter inputConverter = new InputConverter();
             CalculatorEngine calculatorEngine = new CalculatorEngine();
